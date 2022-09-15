@@ -71,6 +71,18 @@ public class Complex {
         return this;
     }
 
+    public Complex sub(Complex b) {
+        re -= b.re;
+        im -= b.im;
+        return this;
+    }
+
+    public Complex div(Complex b) {
+        re += (re * b.re) / (im * b.im);
+        im += (re * b.im) / (im * b.re);
+        return this;
+    }
+
     /**
      * Multiply operation.
      * @param  b multiplier
@@ -84,6 +96,8 @@ public class Complex {
         im = imag;
         return this;
     }
+
+
 
     /**
      * Square of Complex object's length, we're using square of length to 

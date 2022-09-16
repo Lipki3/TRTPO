@@ -71,19 +71,17 @@ public class Complex {
         return this;
     }
 
-    public Complex sub(Complex b) {
-        re -= b.re;
-        im -= b.im;
-        return this;
-    }
     public Complex minus(Complex b) {
         re -= b.re;
         im -= b.im;
         return this;
     }
     public Complex div(Complex b) {
-        re += (re * b.re) / (im * b.im);
-        im += (re * b.im) / (im * b.re);
+        Complex a = this;
+        double real = (a.re * b.re + a.im *b.im)/((b.re *b.re) + (b.im * b.im));
+        double imag = (a.re * b.re - a.im *b.im)/((b.re *b.re) + (b.im * b.im));
+        re = real;
+        im = imag;
         return this;
     }
 
